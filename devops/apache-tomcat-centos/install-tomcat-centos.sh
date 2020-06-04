@@ -56,6 +56,10 @@ Group=tomcat
 WantedBy=multi-user.target
 eof
 
+# Start Tomcat as service
+sudo systemctl start tomcat.service
+sudo systemctl enable tomcat.service
+
 # Modify firewall rules to allow Tomcat
 sudo firewall-cmd --zone=public --permanent --add-port=8080/tcp
 sudo firewall-cmd --reload
